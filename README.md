@@ -200,12 +200,13 @@ yarn run build
 
 ## Credits
 
-- [Motrix](https://github.com/agalwood/Motrix) by agalwood — MIT License
-- [aria2](https://aria2.github.io/) — the underlying download engine
-- Motrix+ extension by you — MIT License
+- [Motrix](https://github.com/agalwood/Motrix) by agalwood - MIT License
+- [aria2](https://aria2.github.io/) - the underlying download engine
+- Motrix+ extension by you - MIT License
 
 ---
 
 ## License
+Read [Motrix](https://github.com/agalwood/Motrix/blob/master/LICENSE)
 
-MIT — do whatever you want, keep the attribution.
+[aria2](https://github.com/aria2/aria2?tab=License-2-ov-file)
