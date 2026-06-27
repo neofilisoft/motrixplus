@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motrix+ Settings</title>
+  <style>
+    body { font-family: sans-serif; display: flex; margin: 0; height: 100vh; background: #fff; color: #111; }
+    .sidebar { width: 220px; background: #f7f8fa; padding: 20px; border-right: 1px solid #eee; }
+    .sidebar h2 { color: #0057FF; margin-bottom: 20px; }
+    .nav-item { padding: 10px 15px; cursor: pointer; border-radius: 6px; margin-bottom: 5px; font-weight: 500; }
+    .nav-item:hover { background: #eef0f4; }
+    .nav-item.active { background: #0057FF; color: white; }
+    .main { flex: 1; padding: 30px; overflow-y: auto; }
+    section { display: none; max-width: 600px; }
+    .section-visible { display: block; }
+    .section-hidden { display: none; }
+    .row { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+    input[type="text"], input[type="password"], input[type="number"] { 
+      width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 6px; 
+    }
+    input[type="range"] { width: 100%; }
+    button { padding: 10px 20px; cursor: pointer; border-radius: 6px; border: 1px solid #ddd; background: #f4f4f4; font-weight: 600; }
+    button:hover { background: #e4e4e4; }
+    #btn-save { background: #0057FF; color: white; border: none; }
+    #btn-save:hover { background: #0047e0; }
+    .hidden { display: none; }
+    .conn-result { margin-top: 10px; font-size: 13px; font-weight: 500; }
+    .conn-result.ok { color: green; }
+    .conn-result.fail { color: red; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Motrix+</h2>
+    <div class="nav-item active" data-section="aria2">Aria2 RPC</div>
+    <div class="nav-item" data-section="downloads">Download Options</div>
+    <div class="nav-item" data-section="tuning">Tuning & Speed</div>
+    <div class="nav-item" data-section="about">About</div>
+  </div>
+  
+  <div class="main">
+    <!-- Section: Aria2 RPC -->
+    <section id="section-aria2" class="section-visible">
+      <h2>Aria2 RPC Configuration</h2>
+      <div class="row">
+        <label>RPC Server URL</label>
+        <input type="text" id="s-rpc-url" value="http://localhost:16800/jsonrpc">
+      </div>
+      <div class="row">
+        <label>RPC Secret Token</label>
+        <input type="password" id="s-secret">
+      </div>
+      <button id="btn-test-conn">Test Connection</button>
+      <div id="conn-result" class="conn-result"></div>
+      <div id="stat-status"></div>
+      <div id="stat-latency"></div>
+      <div id="stat-version"></div>
+      <div id="stat-speed"></div>
+    </section>
+
+    <!-- Section: Downloads -->
+    <section id="section-downloads" class="section-hidden">
+      <h2>Download Settings</h2>
+      <div class="row">
+        <label><input type="checkbox" id="s-intercept"> Auto-intercept Downloads</label>
+      </div>
+      <div class="row">
+        <label>Min file size to intercept: <span id="s-intercept-size-val">10 MB</span></label>
+        <input type="range" id="s-intercept-size" min="1" max="100" value="10">
+      </div>
+      <div class="row">
+        <label>User-Agent String</label>
+        <input type="text" id="s-user-agent">
+      </div>
+    </section>
+
+    <!-- Section: Tuning -->
+    <section id="section-tuning" class="section-hidden">
+      <h2>Speed & Tuning Optimization</h2>
+      <div class="row">
+        <label>Max Connections Per Server: <span id="s-connections-val">8</span></label>
+        <input type="range" id="s-connections" min="1" max="16" value="8">
+      </div>
+      <div class="row">
+        <label>Parallel Splits Per File: <span id="s-splits-val">8</span></label>
+        <input type="range" id="s-splits" min="1" max="16" value="8">
+      </div>
+      <div class="row">
+        <label>Max Concurrent Downloads: <span id="s-concurrent-val">5</span></label>
+        <input type="range" id="s-concurrent" min="1" max="20" value="5">
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="s-bw-opt"> Dynamic Bandwidth Optimization</label>
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="s-latency-opt"> Low-latency mode</label>
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="s-speed-limit-en"> Speed limit</label>
+        <div id="speed-limit-field" class="hidden" style="margin-top:10px;">
+          <input type="number" id="s-speed-limit" placeholder="KB/s">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: About -->
+    <section id="section-about" class="section-hidden">
+      <h2>About Motrix+</h2>
+      <p>Version 1.0.0 (Chromium Unpacked Extension Layout)</p>
+      <p>Motrix+ is an enhanced browser extension providing smart scheduling.</p>
+    </section>
+
+    <!-- Action Buttons -->
+    <div style="margin-top: 30px; display: flex; gap: 10px;">
+      <button id="btn-reset">Reset Defaults</button>
+      <button id="btn-save">Save Changes</button>
+      <span id="save-msg" class="hidden" style="color: green; align-self: center;">Saved!</span>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

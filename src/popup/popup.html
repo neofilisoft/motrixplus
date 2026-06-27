@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motrix+</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="brand">
+        <div class="logo">M+</div>
+        <div class="brand-text">
+          <div class="brand-name">Motrix<span class="plus">+</span></div>
+          <div class="brand-sub">Smart Download Manager</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-settings" class="icon-btn" title="Settings">⚙️</button>
+      </div>
+    </div>
+
+    <!-- Quick Add -->
+    <div class="quick-add">
+      <div class="input-group">
+        <input type="text" id="input-url" placeholder="Paste URL here...">
+        <button id="btn-add" class="btn-primary">Add</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-item"><span class="status-dot online"></span> Connecting...</div>
+      <div class="stat-item"><span class="bw-label">Current</span> <span class="bw-value">0 B/s</span></div>
+    </div>
+    <div class="chart-container"><canvas id="bw-chart"></canvas></div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="active">Active</button>
+      <button class="tab-btn" data-tab="waiting">Waiting</button>
+      <button class="tab-btn" data-tab="stopped">Stopped</button>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list">
+      <div class="empty-state">
+        <div>No downloads here</div>
+        <div>Paste a URL above or right-click a link</div>
+      </div>
+    </div>
+
+    <!-- Settings Drawer -->
+    <div class="settings-drawer">
+      <div class="header">
+        <button id="btn-back" class="icon-btn">←</button>
+        <div class="brand-text"><div class="brand-name">Settings</div></div>
+        <div class="header-actions"></div>
+      </div>
+      <div class="settings-content">
+        <div class="settings-section">
+          <h4>aria2 Connection</h4>
+          <div class="toggle-row">RPC URL <input type="text" id="pop-rpc-url" style="width:150px"></div>
+          <div class="toggle-row">Secret Token <input type="password" id="pop-secret" style="width:150px"></div>
+          <button id="pop-btn-test" class="btn-test">Test connection</button>
+          <div id="pop-conn-result" class="conn-result"></div>
+        </div>
+        <button id="pop-btn-save" class="btn-save">Save settings</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- popup.js -->
+  <script src="popup.js"></script>
+</body>
+</html>
