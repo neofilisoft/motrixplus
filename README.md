@@ -208,5 +208,4 @@ yarn run build
 
 ## License
 Read [Motrix](https://github.com/agalwood/Motrix/blob/master/LICENSE)
-
 [aria2](https://github.com/aria2/aria2?tab=License-2-ov-file)
