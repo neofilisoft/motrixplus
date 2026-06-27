@@ -1,6 +1,6 @@
 # Motrix+ (Motrix Plus)
 
-> A smart browser extension for managing downloads with stable bandwidth and latency optimization — built on top of [Motrix](https://github.com/agalwood/Motrix) and [aria2](https://aria2.github.io/).
+> A smart browser extension for managing downloads with stable bandwidth and latency optimization - built on top of [Motrix](https://github.com/agalwood/Motrix) and [aria2](https://aria2.github.io/).
 
 ---
 
@@ -8,15 +8,15 @@
 
 Motrix+ is a **browser extension** (Chrome / Edge / Brave / Arc) that connects to a local [aria2](https://aria2.github.io/) RPC server to give you:
 
-- 🚀 **Multi-connection downloading** — split files into up to 16 parallel streams
-- 📊 **Live bandwidth monitoring** — real-time speed graph and stability score
-- ⚡ **Smart bandwidth tuning** — auto-adjusts split count based on measured throughput
-- 🎯 **Latency-aware optimization** — reduces overhead on high-latency connections
-- 🔗 **Download interception** — transparently routes browser downloads through aria2
-- 📋 **Clipboard URL detection** — auto-pastes links from clipboard on popup open
-- 🖱️ **Right-click integration** — "Download with Motrix+" on any link
-- 🔔 **Native notifications** — alerts on completion and errors
-- ⚙️ **Full settings page** — speed limits, connection counts, user-agent, and more
+- 🚀 **Multi-connection downloading** - split files into up to 16 parallel streams
+- 📊 **Live bandwidth monitoring** - real-time speed graph and stability score
+- ⚡ **Smart bandwidth tuning** - auto-adjusts split count based on measured throughput
+- 🎯 **Latency-aware optimization** - reduces overhead on high-latency connections
+- 🔗 **Download interception** - transparently routes browser downloads through aria2
+- 📋 **Clipboard URL detection** - auto-pastes links from clipboard on popup open
+- 🖱️ **Right-click integration** - "Download with Motrix+" on any link
+- 🔔 **Native notifications** - alerts on completion and errors
+- ⚙️ **Full settings page** - speed limits, connection counts, user-agent, and more
 
 ---
 
